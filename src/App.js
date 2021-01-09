@@ -59,6 +59,11 @@ class SessionClock extends React.Component {
         seconds: "0" + this.state.seconds,
       });
     }
+
+    if (this.state.seconds == "01" && this.state.minutes == 0) {
+      let bellEl = document.querySelector("#bell");
+      bellEl.play();
+    }
   }
 
   break() {
@@ -68,8 +73,7 @@ class SessionClock extends React.Component {
     containerEl.className = "container-fluid container-on-break";
     let rootEl = document.querySelector("#root");
     rootEl.className = "container-on-break";
-    let bellEl = document.querySelector("#bell");
-    bellEl.play();
+
     this.setState({
       sessionState: "on break",
       minutes: this.state.breakLength - 1,
@@ -104,8 +108,6 @@ class SessionClock extends React.Component {
     containerEl.className = "container-fluid container-in-session";
     let rootEl = document.querySelector("#root");
     rootEl.className = "container-in-session";
-    let bellEl = document.querySelector("#bell");
-    bellEl.play();
     this.setState({
       sessionState: "in session",
       minutes: this.state.sessionLength - 1,
