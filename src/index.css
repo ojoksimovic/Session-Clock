@@ -66,6 +66,9 @@
     color: #ffffffd8;
     padding: 2px;
   }
+  .hidden {
+    display: none;
+  }
 }
 
 /* TABLET VIEW */
@@ -147,6 +150,9 @@
     border: none;
     color: #ffffffd8;
     padding: 2px;
+  }
+  .hidden {
+    display: none;
   }
 }
 
@@ -230,5 +236,9 @@
     border: none;
     color: #ffffffd8;
     padding: 2px;
+  }
+
+  .hidden {
+    display: none;
   }
 }
